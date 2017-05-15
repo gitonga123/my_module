@@ -3,15 +3,29 @@
     'name': "my_module",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        **Google Definition** - a building or room containing collections of books, periodicals, 
+        and sometimes films and recorded music for people to read, borrow, or refer to.
+        """,
 
     'description': """
-        Long description of module's purpose
+    A library is a collection of sources of information and similar resources, made accessible to a defined community for reference or borrowing.
+    It provides physical or digital access to material, and may be a physical building or room, or a virtual space, or both.
+
+    .. image:: https://en.wikipedia.org/wiki/Library#/media/File:Melk_-_Abbey_-_Library.jpg
+
+
+    A library's collection can include books, periodicals, newspapers, manuscripts, films, maps, prints, documents,
+     **microform**,** CDs**, **cassettes**, **videotapes**, **DVDs**, **Blu-ray Discs, e-books, audio books, databases**, and **other formats**. 
+
+    .. image:: https://en.wikipedia.org/wiki/Library#/media/File:Halifax_central_library_June_2015.jpg
+
+    Libraries range in size from a few shelves of books to several million items. 
+    In Latin and Greek, the idea of a bookcase is represented by Bibliotheca and Bibliothēkē (Greek: βιβλιοθήκη): 
+    derivatives of these mean library in many modern languages, e.g. French bibliothèque.
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Library Books Kenya",
+    'website': "http://www.librarybooks.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/openerp/addons/base/module/module_data.xml
