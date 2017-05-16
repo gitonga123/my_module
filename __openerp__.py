@@ -11,13 +11,13 @@
     A library is a collection of sources of information and similar resources, made accessible to a defined community for reference or borrowing.
     It provides physical or digital access to material, and may be a physical building or room, or a virtual space, or both.
 
-    .. image:: https://en.wikipedia.org/wiki/Library#/media/File:Melk_-_Abbey_-_Library.jpg
+    .. image:: https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Melk_-_Abbey_-_Library.jpg/800px-Melk_-_Abbey_-_Library.jpg
 
 
     A library's collection can include books, periodicals, newspapers, manuscripts, films, maps, prints, documents,
      **microform**,** CDs**, **cassettes**, **videotapes**, **DVDs**, **Blu-ray Discs, e-books, audio books, databases**, and **other formats**. 
 
-    .. image:: https://en.wikipedia.org/wiki/Library#/media/File:Halifax_central_library_June_2015.jpg
+    .. image:: https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Halifax_central_library_June_2015.jpg/800px-Halifax_central_library_June_2015.jpg
 
     Libraries range in size from a few shelves of books to several million items. 
     In Latin and Greek, the idea of a bookcase is represented by Bibliotheca and Bibliothēkē (Greek: βιβλιοθήκη): 
