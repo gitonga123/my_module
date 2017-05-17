@@ -5,6 +5,7 @@ from openerp import models, fields, api
 class BookCategory(models.Model):
 	_name = 'library.book.category'
 	name = fields.Char('Category')
+	
 	parent_id = fields.Many2one(
 		'library.book.category',
 		string='Parent Category',

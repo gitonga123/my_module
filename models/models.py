@@ -10,6 +10,9 @@ class LibraryBook(models.Model):
 	_rec_name ='short_name'
 
 	name=fields.Char('Title', required=True)
+	_sql_constraints = [
+	    ('name_uniq', 'unique (name)',('The Book Title must be unique !')),
+	]
 	short_name = fields.Char(
 	    string='Short Title',
 	    size=100,
@@ -54,6 +57,15 @@ class LibraryBook(models.Model):
 		context={},
 		domain=[],
 		)
+
+	@api.constrains('date_release')
+	def _check_release_date(self):
+		for r in self:
+			if r.date_release > fields.Date.today():
+				raise models.ValidationError(
+					'Release Date must be in the past'
+				)
+		
 
 
 class ResPartner(models.Model):
