@@ -54,7 +54,7 @@ class LibraryBook(models.Model):
 	retail_price = fields.Monetary(
 		'Retail Price')
 	publisher_id = fields.Many2one(
-		'res,partner', string='Publisher',
+		'res.partner', string='Publisher',
 		ondelete='set null',
 		context={},
 		domain=[],
@@ -62,9 +62,9 @@ class LibraryBook(models.Model):
 	age_days = fields.Float(
 		string='Days Since Release',
 		compute='_compute_age',
-		inverse='_inverse_age',
+		#inverse='_inverse_age',
 		search ='_search_age',
-		store=True,
+		store=False,
 		compute_sudo=False,)
 
 	@api.constrains('date_release')
@@ -81,15 +81,15 @@ class LibraryBook(models.Model):
 		for book in self.filtered('date_release'):
 			release = fDate.from_string(book.date_release)
 			
-			delta =  release- today
+			delta =  release-today
 			book.age_days = delta.days
-		
-	def _inverse_age(self):
-		today = fDate.from_string(fDate.today())
-		for book in self.filtered('date_release'):
-			d = td(days=book.age_days)-today
-			book.date_release = fDate.to_string(d)
-		
+
+	# def _inverse_age(self): 
+	# 	today = fDate.from_string(fDate.today())
+	# 	for book in self.filtered('date_release'):
+	# 		d = td(days=book.age_days) - today
+	# 		book.date_release = fDate.to_string(d)
+					
 	def _search_age(self):
 		today = fDate.from_string(fDate.today())
 		value_days = td(days=value)
