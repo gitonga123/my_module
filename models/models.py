@@ -66,7 +66,8 @@ class LibraryBook(models.Model):
 		search ='_search_age',
 		store=False,
 		compute_sudo=False,)
-
+	publisher_city = fields.Char(
+		'publisher City',related='publisher_id.city')
 	@api.constrains('date_release')
 	def _check_release_date(self):
 		for r in self:
