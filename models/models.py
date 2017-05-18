@@ -10,7 +10,7 @@ class LibraryBook(models.Model):
 	_description = 'Library Book'
 	_order = 'date_release desc, name'
 	_rec_name ='short_name'
-	_inherit = ['base.archive']
+	#_inherit = ['base.archive']
 
 
 	name=fields.Char('Title', required=True)
