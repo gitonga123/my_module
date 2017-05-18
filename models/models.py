@@ -10,6 +10,7 @@ class LibraryBook(models.Model):
 	_description = 'Library Book'
 	_order = 'date_release desc, name'
 	_rec_name ='short_name'
+	_inherit = ['base.archive']
 
 
 	name=fields.Char('Title', required=True)
@@ -130,3 +131,12 @@ class ResPartner(models.Model):
 		for r in self:
 			r.count_books = len(r.authored_book_ids)
 
+class BaseArchive(models.AbstractModel):
+	_name = 'base.archive'
+	active  = fields.Boolean(
+	   default=True,
+	)
+
+	def do_archive(self):
+		for record in self:
+			record.active = not record.active
