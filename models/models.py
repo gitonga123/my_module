@@ -11,6 +11,7 @@ class LibraryBook(models.Model):
 	_order = 'date_release desc, name'
 	_rec_name ='short_name'
 
+
 	name=fields.Char('Title', required=True)
 	_sql_constraints = [
 	    ('name_uniq', 'unique (name)',('The Book Title must be unique !')),
@@ -70,6 +71,8 @@ class LibraryBook(models.Model):
 		'publisher City',related='publisher_id.city')
 	ref_doc_id =fields.Reference(
 		selection='_referencable_models',string='Reference Document')
+
+
 	@api.constrains('date_release')
 	def _check_release_date(self):
 		for r in self:
@@ -108,7 +111,22 @@ class LibraryBook(models.Model):
 
 class ResPartner(models.Model):
 	_inherit = 'res.partner'
+	_order = "name"
+
 	book_ids = fields.One2many(
 		'library.book','publisher_id',string="Published Books"
 		)
 	book_ids = fields.Many2many('library.book',string='Authored Books')
+	authored_book_ids = fields.Many2many(
+	    'library.book',
+	    string='Authored Book',
+	)
+	count_books = fields.Integer(
+		"Number of Authored Books",
+		compute='_compute_count_books')
+
+	@api.depends('authored_book_ids')
+	def _compute_count_books(self):
+		for r in self:
+			r.count_books = len(r.authored_book_ids)
+
