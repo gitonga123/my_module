@@ -25,6 +25,7 @@ class LibraryBook(models.Model):
 	)
 	date_release = fields.Date('Release Date')
 	author_ids = fields.Many2many('res.partner', string="Authors")
+	book_read = fields.Many2many('res.partner', 'book_ids','book_read',string="Book Read")
 	notes = fields.Text('Intermal Notes')
 	state = fields.Selection(
 			[('draft','Not Available'),
@@ -169,3 +170,4 @@ class LibraryMember(models.Model):
 	date_start = fields.Date('Member Since')
 	date_end = fields.Date('Termination Date')
 	member_number = fields.Char()
+
