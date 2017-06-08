@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os
 from openerp import models, fields, api
 from openerp.addons import decimal_precision as dp
 from openerp.fields import Date as fDate
